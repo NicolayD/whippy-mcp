@@ -13,7 +13,7 @@ chmod +x setup.sh run.sh
 ```
 
 ### 2. Get Your Whippy AI API Key
-1. Log into your [Whippy AI account](https://app.whippy.ai)
+1. Log into your [Whippy AI account](https://app.whippy.co)
 2. Go to **Settings** → **Developers** tab
 3. Create a new API key
 4. Copy the API key value
