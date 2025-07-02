@@ -1,6 +1,3 @@
-
-# Virtual Environment
-whippy-mcp/
 app/node_modules/
 node_modules/
 .vercel
