@@ -324,3 +324,6 @@ const handler = createMcpHandler(
 );
 
 export { handler as GET, handler as POST, handler as DELETE };
+
+// Configure max duration for Vercel
+export const maxDuration = 30;
