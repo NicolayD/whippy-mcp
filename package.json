@@ -1,0 +1,28 @@
+{
+  "name": "whippy-mcp-server-vercel",
+  "version": "1.0.0",
+  "description": "Whippy AI MCP Server deployed on Vercel",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@vercel/mcp-adapter": "0.8.2",
+    "next": "15.2.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "redis": "^4.7.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5"
+  },
+  "license": "MIT"
+}

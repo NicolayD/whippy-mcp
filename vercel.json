@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/mcp/route.js": {
+    "app/api/mcp/[transport]/route.js": {
       "maxDuration": 30
     }
   }
