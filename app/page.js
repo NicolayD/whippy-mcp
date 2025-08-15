@@ -135,13 +135,13 @@ export default function HomePage() {
                 <h3 className="text-lg font-medium text-gray-900 mb-3">
                   Step 1: Install mcp-proxy
                 </h3>
-                <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto mb-4">
+                <div className="bg-gray-900 rounded-lg p-4 text-green-400 overflow-x-auto mb-4">
                   Option 1: With uv (recommended) - https://docs.astral.sh/uv/
                   <pre className="text-green-400 text-sm">
                     uv tool install mcp-proxy
                   </pre>
                 </div>
-                <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto mb-4">
+                <div className="bg-gray-900 rounded-lg p-4 text-green-400 overflow-x-auto mb-4">
                   Option 2: With pipx (alternative)
                   <pre className="text-green-400 text-sm">
                     pipx install mcp-proxy
