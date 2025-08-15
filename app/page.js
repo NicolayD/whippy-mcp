@@ -30,13 +30,10 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-gray-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-700 mb-2">
-                  MCP Endpoint
+                  MCP Endpoint - Streamable HTTP transport
                 </h3>
                 <code className="text-sm text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                  {typeof window !== "undefined"
-                    ? window.location.origin
-                    : "https://your-app.vercel.app"}
-                  /api/mcp
+                  https://whippy-mcp-demo.vercel.app/api/mcp/mcp
                 </code>
               </div>
 
@@ -117,16 +114,66 @@ export default function HomePage() {
             </h2>
 
             <div className="space-y-6">
+              <div className="bg-blue-50 rounded-lg p-4 mb-6">
+                <div className="flex items-start space-x-2">
+                  <span className="text-blue-600 font-bold">ℹ️</span>
+                  <div>
+                    <p className="text-blue-800 text-sm">
+                      <strong>Note:</strong> This server uses Streamable HTTP
+                      transport. You'll need to install the{" "}
+                      <code className="bg-blue-100 px-1 rounded">
+                        mcp-proxy
+                      </code>{" "}
+                      library to use it with Claude Desktop, as SSE transport is
+                      being deprecated.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               <div>
                 <h3 className="text-lg font-medium text-gray-900 mb-3">
-                  Claude Desktop
+                  Step 1: Install mcp-proxy
+                </h3>
+                <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto mb-4">
+                  Option 1: With uv (recommended) - https://docs.astral.sh/uv/
+                  <pre className="text-green-400 text-sm">
+                    uv tool install mcp-proxy
+                  </pre>
+                </div>
+                <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto mb-4">
+                  Option 2: With pipx (alternative)
+                  <pre className="text-green-400 text-sm">
+                    pipx install mcp-proxy
+                  </pre>
+                </div>
+                <p className="text-sm text-gray-600 mb-4">
+                  For more installation options, visit:{" "}
+                  <a
+                    href="https://github.com/sparfenyuk/mcp-proxy#installation"
+                    className="text-blue-600 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    https://github.com/sparfenyuk/mcp-proxy#installation
+                  </a>
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-medium text-gray-900 mb-3">
+                  Step 2: Claude Desktop Configuration
                 </h3>
                 <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
                   <pre className="text-green-400 text-sm">
                     {`{
   "mcpServers": {
     "whippy": {
-      "url": "${typeof window !== "undefined" ? window.location.origin : "https://your-app.vercel.app"}/api/mcp",
+      "command": "mcp-proxy",
+      "args": [
+        "--transport=streamablehttp",
+        "https://whippy-mcp-demo.vercel.app/api/mcp/mcp"
+      ],
       "env": {
         "WHIPPY_API_KEY": "your_whippy_api_key_here"
       }
