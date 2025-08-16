@@ -169,7 +169,7 @@ export default function HomePage() {
                     {`{
   "mcpServers": {
     "whippy": {
-      "command": "mcp-proxy",
+      "command": "/path/to/mcp-proxy",
       "args": [
         "--transport=streamablehttp",
         "https://whippy-mcp-demo.vercel.app/api/mcp/mcp"
